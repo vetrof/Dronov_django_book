@@ -5,6 +5,16 @@
     <title>Title</title>
 </head>
 <body>
+    <a href='/bboard/'> Главная </a>
+
+    <p>рубрики:</p>
+
+    <div>
+    {% for rudric in rubrics %}
+        <a href="/bboard/{{ rudric.pk }}"> {{ rudric }} </a>
+    {% endfor %}
+    </div>
+    <p>текущая рубрика: {{ current_rubric }}</p>
 
 
     {% for bb in bbs %}
@@ -13,6 +23,7 @@
         <p>{{ bb.content }}</p>
         <p>{{ bb.price }}</p>
         <p>{{ bb.published|date:'d.m.Y H:i:s' }}</p>
+        <p>{{ bb.rubric.pk }}</p>
       </div>
     {% endfor %}
 
