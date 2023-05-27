@@ -1,3 +1,7 @@
 
 *.pyc
 project_1/bboard/__pycache__/views.cpython-311.pyc
+*.xml
+*.sqlite3
+*.iml
+
