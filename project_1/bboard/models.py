@@ -7,6 +7,7 @@ class Bd(models.Model):
     price = models.FloatField(null=True, blank=True, verbose_name='Цена')
     published = models.DateTimeField(auto_now_add=True, db_index=True, verbose_name='Опубликовано')
     rubric = models.ForeignKey('Rubric', null=True, on_delete=models.PROTECT, verbose_name='Рубрика')
+
     class Meta:
         verbose_name_plural = 'Объявления'
         verbose_name = 'Объявление'
@@ -22,7 +23,7 @@ class Rubric(models.Model):
         ordering = ['name']
 
     def __str__(self):
-        return f'*** {self.name} ***'
+        return f'{self.name}'
 
 
 

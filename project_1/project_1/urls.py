@@ -11,7 +11,7 @@ urlpatterns = [
 
 # index/bboard/
 urlpatterns += [
-    path('bboard/', index_view),
-    path('bboard/<int:by_rubric>', index_rubric_view),
+    path('bboard/', index_view, name='board'),
+    path('bboard/<int:by_rubric>', index_rubric_view, name='rubrics'),
 
 ]

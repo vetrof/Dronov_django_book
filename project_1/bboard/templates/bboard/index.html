@@ -5,13 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-    <a href='/bboard/'> Главная </a>
+    <a href='{% url 'board' %}'> Главная </a>
 
     <p>рубрики:</p>
 
     <div>
     {% for rudric in rubrics %}
-        <a href="/bboard/{{ rudric.pk }}"> {{ rudric }} </a>
+        <a href="/bboard/{{ rudric.pk }}"> <p>{{ rudric }}</p> </a>
     {% endfor %}
     </div>
     <p>текущая рубрика: {{ current_rubric }}</p>
