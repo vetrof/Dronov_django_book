@@ -5,6 +5,7 @@ from foodlist.models import Food, Type
 
 class FoodAdminView(admin.ModelAdmin):
     list_display = ('name', 'info', 'type', 'id')
+    search_fields = ('name', 'info')
     ordering = ('-id',)
 
 

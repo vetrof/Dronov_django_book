@@ -5,3 +5,4 @@ class QuestionModel(models.Model):
     name = models.TextField()
     email = models.EmailField()
     question = models.TextField()
+
