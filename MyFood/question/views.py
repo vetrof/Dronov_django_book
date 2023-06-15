@@ -7,16 +7,26 @@ from question.forms import QuestionModelForm
 from question.models import QuestionModel
 
 
+# class QuestionFormView(CreateView):
+#     template_name = 'question/question.html'
+#     form_class = QuestionModelForm
+#     success_url = reverse_lazy('index')
+
+
 class QuestionFormView(CreateView):
     template_name = 'question/question.html'
-    form_class = QuestionModelForm
+    model = QuestionModel
+    fields = ('name', 'email', 'question')
     success_url = reverse_lazy('index')
+
+
 
 
 class CrispyCreateView(CreateView):
     model = QuestionModel
     template_name = 'question/crispy.html'
     fields = ['name', 'email', 'question']
+    success_url = reverse_lazy('index')
 
 
     # def get_context_data(self, **kwargs):
